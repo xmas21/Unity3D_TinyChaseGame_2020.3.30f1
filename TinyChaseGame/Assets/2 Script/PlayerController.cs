@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     float f_moveSpeed;
     float f_deltaTime;
 
+    bool b_isDead;
+
     void Awake()
     {
         rig = GetComponent<Rigidbody>();
@@ -39,14 +41,18 @@ public class PlayerController : MonoBehaviour
             Destroy(col.gameObject);
             gameManager.Decrease();
         }
-        else if (col.gameObject.CompareTag("Enemies"))
+        else if (col.gameObject.name.Contains("Ghost")) // CompareTag("Enemies")
         {
+            Debug.Log(col.gameObject.name);
             Die();
         }
     }
 
     void Move()
     {
+        if (b_isDead)
+            return;
+
         Vector3 v3Target = new Vector3(joystick.Horizontal, 0, joystick.Vertical);
 
         tf_this.position += v3Target * f_deltaTime * f_moveSpeed;
@@ -54,6 +60,8 @@ public class PlayerController : MonoBehaviour
 
     void Die()
     {
-        gameManager.SetDiePage(true);
+        b_isDead = true;
+
+        gameManager.SetDiePage(b_isDead);
     }
 }

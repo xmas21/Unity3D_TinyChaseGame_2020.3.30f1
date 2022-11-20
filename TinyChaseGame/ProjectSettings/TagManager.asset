@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Collects
   - Enemies
+  - Map
   layers:
   - Default
   - TransparentFX
