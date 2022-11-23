@@ -8,6 +8,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] [Header("重新開始按鈕")] Button restartBtn;
     [SerializeField] [Header("離開按鈕")] Button exitBtn;
 
+    [SerializeField] [Header("下一關頁面")] GameObject nextLevelObj;
+    [SerializeField] [Header("下一關按鈕")] Button nextLevelBtn;
+
     [SerializeField] [Header("關卡道具數量")] int iCount;
     [SerializeField] [Header("關卡時間")] float fMaxTime;
     float fGameTime;
@@ -47,6 +50,7 @@ public class GameManager : MonoBehaviour
         boPlayerDie = false;
 
         restartBtn.onClick.AddListener(Restart);
+        nextLevelBtn.onClick.AddListener(NextLevel);
 
         SetDiePage(false);
         UpdateUI();
@@ -89,6 +93,13 @@ public class GameManager : MonoBehaviour
     void Restart()
     {
         // SceneManager.LoadScene("2 Game");
+    }
+
+    void NextLevel()
+    {
+        int sceneID = SceneManager.GetActiveScene().buildIndex;
+
+        SceneManager.LoadScene(sceneID++);
     }
 
     public void Decrease()
