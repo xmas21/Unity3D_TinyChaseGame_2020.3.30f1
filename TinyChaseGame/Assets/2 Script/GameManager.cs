@@ -52,6 +52,8 @@ public class GameManager : MonoBehaviour
         restartBtn.onClick.AddListener(Restart);
         nextLevelBtn.onClick.AddListener(NextLevel);
 
+        Screen.fullScreen = true;
+
         SetDiePage(false);
         UpdateUI();
     }

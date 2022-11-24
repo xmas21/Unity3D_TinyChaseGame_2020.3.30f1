@@ -41,9 +41,8 @@ public class PlayerController : MonoBehaviour
             Destroy(col.gameObject);
             gameManager.Decrease();
         }
-        else if (col.gameObject.name.Contains("Ghost")) // CompareTag("Enemies")
+        else if (col.gameObject.name.Contains("Ghost"))
         {
-            Debug.Log(col.gameObject.name);
             Die();
         }
     }

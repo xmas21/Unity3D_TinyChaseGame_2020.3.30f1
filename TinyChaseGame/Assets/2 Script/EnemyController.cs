@@ -6,6 +6,8 @@ public class EnemyController : MonoBehaviour
 {
     [SerializeField] [Header("Ä²µo°lÂÜ¶ZÂ÷")] float f_trackRange;
 
+    Light[] lights = new Light[2];
+
     Rigidbody rig;
     NavMeshAgent nav;
     Transform tf_player;
@@ -21,6 +23,9 @@ public class EnemyController : MonoBehaviour
 
         tf_this = GetComponent<Transform>();
         tf_player = GameObject.Find("Player").GetComponent<Transform>();
+
+        lights[0] = transform.GetChild(0).GetComponent<Light>();
+        lights[1] = transform.GetChild(1).GetComponent<Light>();
     }
 
     void Start()
@@ -38,7 +43,11 @@ public class EnemyController : MonoBehaviour
     void SetTrackState()
     {
         if (Vector3.Distance(tf_this.position, tf_player.position) <= f_trackRange)
+        {
             bo_isTracking = true;
+            lights[0].enabled = bo_isTracking;
+            lights[1].enabled = bo_isTracking;
+        }
     }
 
     void Track()
