@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] [Header("離開按鈕")] Button exitBtn;
 
     [SerializeField] [Header("下一關頁面")] GameObject nextLevelObj;
+    [SerializeField] [Header("下一關文字")] Text nextInfoTxt;
     [SerializeField] [Header("下一關按鈕")] Button nextLevelBtn;
 
     [SerializeField] [Header("關卡道具數量")] int iCount;
@@ -92,26 +93,38 @@ public class GameManager : MonoBehaviour
             fGameTime -= fdeltaTime;
     }
 
+    public void SetDiePage(bool r_bEnable)
+    {
+        boPlayerDie = r_bEnable;
+        playerDieObj.SetActive(boPlayerDie);
+    }
+
     void Restart()
     {
-        // SceneManager.LoadScene("2 Game");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void Decrease()
+    {
+        iCount--;
+
+        if (iCount <= 0)
+            SetNextLevelPage(true);
+    }
+
+    public void SetNextLevelPage(bool r_bEnable)
+    {
+        nextLevelObj.SetActive(r_bEnable);
+
+        nextInfoTxt.text = $"關卡 {SceneManager.GetActiveScene().buildIndex - 1}/3 \r\n 通關成功!!";
     }
 
     void NextLevel()
     {
         int sceneID = SceneManager.GetActiveScene().buildIndex;
 
-        SceneManager.LoadScene(sceneID++);
-    }
+        sceneID++;
 
-    public void Decrease()
-    {
-        iCount--;
-    }
-
-    public void SetDiePage(bool r_bEnable)
-    {
-        boPlayerDie = r_bEnable;
-        playerDieObj.SetActive(boPlayerDie);
+        SceneManager.LoadScene(sceneID);
     }
 }

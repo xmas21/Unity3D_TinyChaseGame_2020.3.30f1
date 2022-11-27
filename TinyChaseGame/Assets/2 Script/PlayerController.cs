@@ -8,8 +8,7 @@ public class PlayerController : MonoBehaviour
     Transform tf_this;
     GameManager gameManager;
 
-    float f_moveSpeed;
-    float f_deltaTime;
+    float f_moveSpeed = 5f;
 
     bool b_isDead;
 
@@ -25,7 +24,6 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rig.useGravity = false;
-        f_deltaTime = Time.deltaTime;
         f_moveSpeed = 5f;
     }
 
@@ -54,7 +52,7 @@ public class PlayerController : MonoBehaviour
 
         Vector3 v3Target = new Vector3(joystick.Horizontal, 0, joystick.Vertical);
 
-        tf_this.position += v3Target * f_deltaTime * f_moveSpeed;
+        tf_this.position += v3Target * Time.deltaTime * f_moveSpeed;
     }
 
     void Die()

@@ -32,6 +32,10 @@ public class EnemyController : MonoBehaviour
     {
         rig.useGravity = false;
         rig.isKinematic = true;
+
+        nav.speed = 4.5f;
+        nav.radius = 3f;
+        nav.height = 2f;
     }
 
     void FixedUpdate()

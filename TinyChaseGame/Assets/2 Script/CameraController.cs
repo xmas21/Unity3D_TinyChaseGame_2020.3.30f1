@@ -2,8 +2,7 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    #region - Variables -
-    [SerializeField] [Header("追蹤速度")] float f_TrackSpeed;
+    [SerializeField] [Header("追蹤速度")] float f_TrackSpeed = 10f;
     float f_deltaTime;
 
     [SerializeField] [Header("左右方限制")] Vector2 v2_HorizontalLimit;
@@ -11,7 +10,6 @@ public class CameraController : MonoBehaviour
 
     Transform tf_this;
     Transform tf_player;
-    #endregion
 
     void Awake()
     {
@@ -24,7 +22,7 @@ public class CameraController : MonoBehaviour
         v2_HorizontalLimit = new Vector2(-13.5f, 13.5f);
         v2_VerticalLimit = new Vector2(-10.5f, 10.5f);
 
-        f_TrackSpeed = 5;
+        f_TrackSpeed = 10f;
         f_deltaTime = Time.deltaTime;
     }
 
@@ -42,7 +40,8 @@ public class CameraController : MonoBehaviour
         v_player.y = 20;
         v_player.z = Mathf.Clamp(v_player.z, v2_VerticalLimit.x, v2_VerticalLimit.y);
 
-        v_camera = Vector3.Lerp(v_camera, v_player, f_TrackSpeed * f_deltaTime);
+        // v_camera = Vector3.Lerp(v_camera, v_player, f_TrackSpeed * f_deltaTime);
+        v_camera = v_player;
 
         tf_this.localPosition = v_camera;
     }
