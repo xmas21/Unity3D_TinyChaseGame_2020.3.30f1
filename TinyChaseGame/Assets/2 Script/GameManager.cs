@@ -56,8 +56,6 @@ public class GameManager : MonoBehaviour
         nextLevelBtn.onClick.AddListener(NextLevel);
         exitBtn.onClick.AddListener(ToMenu);
 
-        Screen.fullScreen = true;
-
         SetDiePage(false);
         UpdateUI();
     }
