@@ -4,7 +4,8 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] [Header("角色死亡頁面")] GameObject playerDieObj;
+    [SerializeField] [Header("遊戲失敗頁面")] GameObject gameOverObj;
+    [SerializeField] [Header("遊戲失敗頁面")] Text gameOverInfo_Txt;
     [SerializeField] [Header("重新開始按鈕")] Button restartBtn;
     [SerializeField] [Header("離開按鈕")] Button exitBtn;
 
@@ -18,6 +19,7 @@ public class GameManager : MonoBehaviour
     float fdeltaTime;
 
     bool boPlayerDie;
+    bool boOverTime;
 
     Text remainCount;
     Text timerValue;
@@ -34,8 +36,8 @@ public class GameManager : MonoBehaviour
         if (timerValue == null)
             timerValue = GameObject.Find("Canvas/HUD/Timer/Timer Value").GetComponent<Text>();
 
-        if (playerDieObj == null)
-            playerDieObj = GameObject.Find("Canvas/Die Page");
+        if (gameOverObj == null)
+            gameOverObj = GameObject.Find("Canvas/Die Page");
 
         if (restartBtn == null)
             restartBtn = GameObject.Find("Canvas/Die Page/Restart Btn").GetComponent<Button>();
@@ -52,6 +54,7 @@ public class GameManager : MonoBehaviour
 
         restartBtn.onClick.AddListener(Restart);
         nextLevelBtn.onClick.AddListener(NextLevel);
+        exitBtn.onClick.AddListener(ToMenu);
 
         Screen.fullScreen = true;
 
@@ -61,7 +64,7 @@ public class GameManager : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (boPlayerDie)
+        if (boPlayerDie || boOverTime)
             return;
 
         UpdateUI();
@@ -91,12 +94,15 @@ public class GameManager : MonoBehaviour
     {
         if (fGameTime > 0.1f)
             fGameTime -= fdeltaTime;
+        else
+            GameOver(true);
     }
 
     public void SetDiePage(bool r_bEnable)
     {
         boPlayerDie = r_bEnable;
-        playerDieObj.SetActive(boPlayerDie);
+        gameOverObj.SetActive(boPlayerDie);
+        gameOverInfo_Txt.text = "你死亡了";
     }
 
     void Restart()
@@ -126,5 +132,17 @@ public class GameManager : MonoBehaviour
         sceneID++;
 
         SceneManager.LoadScene(sceneID);
+    }
+
+    void GameOver(bool r_bIsOver)
+    {
+        boOverTime = r_bIsOver;
+        gameOverObj.SetActive(boOverTime);
+        gameOverInfo_Txt.text = "超過時間";
+    }
+
+    void ToMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 }

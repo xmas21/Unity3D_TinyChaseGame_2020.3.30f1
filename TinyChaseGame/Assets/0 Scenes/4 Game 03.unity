@@ -2234,7 +2234,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60615458460b9e94d8e88140e3def9f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerDieObj: {fileID: 8416396323452680488}
+  gameOverObj: {fileID: 8416396323452680488}
+  gameOverInfo_Txt: {fileID: 8416396323452680489}
   restartBtn: {fileID: 8416396323452680487}
   exitBtn: {fileID: 8416396323452680486}
   nextLevelObj: {fileID: 8416396323452680485}
@@ -3308,3 +3309,14 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3341791489710052731, guid: 57ff55e69f94b814f9c08c07421e8a8a, type: 3}
   m_PrefabInstance: {fileID: 8416396323452680482}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8416396323452680489 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3341791490492367003, guid: 57ff55e69f94b814f9c08c07421e8a8a, type: 3}
+  m_PrefabInstance: {fileID: 8416396323452680482}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -23,7 +23,7 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 0.1
+  m_AmbientIntensity: 0.2
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0, g: 0, b: 0, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
@@ -2163,7 +2163,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60615458460b9e94d8e88140e3def9f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerDieObj: {fileID: 820592232}
+  gameOverObj: {fileID: 820592232}
+  gameOverInfo_Txt: {fileID: 3341791490513726228}
   restartBtn: {fileID: 1420082905}
   exitBtn: {fileID: 1426485428}
   nextLevelObj: {fileID: 1047358384}
@@ -3128,10 +3129,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3341791489936261283, guid: 57ff55e69f94b814f9c08c07421e8a8a, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3341791491502079075, guid: 57ff55e69f94b814f9c08c07421e8a8a, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -3222,6 +3219,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57ff55e69f94b814f9c08c07421e8a8a, type: 3}
+--- !u!114 &3341791490513726228 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3341791490492367003, guid: 57ff55e69f94b814f9c08c07421e8a8a, type: 3}
+  m_PrefabInstance: {fileID: 3341791490513726227}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5727306234942080669
 PrefabInstance:
   m_ObjectHideFlags: 0

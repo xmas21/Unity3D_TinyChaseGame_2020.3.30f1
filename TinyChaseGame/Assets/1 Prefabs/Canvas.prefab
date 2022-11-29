@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3341791489710052730}
   m_Layer: 5
-  m_Name: Die Page
+  m_Name: GameOver Page
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -314,7 +314,7 @@ GameObject:
   - component: {fileID: 3341791490252814789}
   - component: {fileID: 3341791490252814790}
   m_Layer: 5
-  m_Name: Die BG
+  m_Name: GameOver BG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -619,7 +619,7 @@ GameObject:
   - component: {fileID: 3341791490492367003}
   - component: {fileID: 3341791490492367001}
   m_Layer: 5
-  m_Name: Die Info
+  m_Name: GameOver Info
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
