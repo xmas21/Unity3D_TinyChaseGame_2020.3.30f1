@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
 
     bool boPlayerDie;
     bool boOverTime;
+    bool boPassLevel;
 
     Text remainCount;
     Text timerValue;
@@ -50,7 +51,10 @@ public class GameManager : MonoBehaviour
     {
         fdeltaTime = Time.deltaTime;
         fGameTime = fMaxTime;
+
         boPlayerDie = false;
+        boOverTime = false;
+        boPassLevel = false;
 
         restartBtn.onClick.AddListener(Restart);
         nextLevelBtn.onClick.AddListener(NextLevel);
@@ -62,7 +66,7 @@ public class GameManager : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (boPlayerDie || boOverTime)
+        if (boPlayerDie || boOverTime || boPassLevel)
             return;
 
         UpdateUI();
@@ -98,6 +102,9 @@ public class GameManager : MonoBehaviour
 
     public void SetDiePage(bool r_bEnable)
     {
+        if (boPlayerDie || boPassLevel)
+            return;
+
         boPlayerDie = r_bEnable;
         gameOverObj.SetActive(boPlayerDie);
         gameOverInfo_Txt.text = "你死亡了";
@@ -118,7 +125,8 @@ public class GameManager : MonoBehaviour
 
     public void SetNextLevelPage(bool r_bEnable)
     {
-        nextLevelObj.SetActive(r_bEnable);
+        boPassLevel = r_bEnable;
+        nextLevelObj.SetActive(boPassLevel);
 
         nextInfoTxt.text = $"關卡 {SceneManager.GetActiveScene().buildIndex - 1}/3 \r\n 通關成功!!";
     }

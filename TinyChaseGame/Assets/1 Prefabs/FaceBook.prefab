@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 7158230517905623305}
   - component: {fileID: 7158230517905623304}
   - component: {fileID: 7158230517905623307}
-  - component: {fileID: 7158230517905623306}
+  - component: {fileID: 5445002118032164233}
   m_Layer: 0
   m_Name: FaceBook
   m_TagString: Collects
@@ -176,8 +176,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &7158230517905623306
-MeshCollider:
+--- !u!135 &5445002118032164233
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -186,7 +186,6 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  serializedVersion: 2
+  m_Radius: 0.8
+  m_Center: {x: 0, y: 0, z: 0}
