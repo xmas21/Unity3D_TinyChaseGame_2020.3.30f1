@@ -152,3 +152,18 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 }
+
+public class GlobalData
+{
+    public static string playerName;
+
+    public static void SetPlayerName(string r_sName)
+    {
+        playerName = r_sName;
+    }
+
+    public static string GetPlayerName()
+    {
+        return playerName;
+    }
+}
