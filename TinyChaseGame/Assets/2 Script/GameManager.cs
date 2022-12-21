@@ -1,20 +1,21 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] [Header("¹CÀ¸¥¢±Ñ­¶­±")] GameObject gameOverObj;
-    [SerializeField] [Header("¹CÀ¸¥¢±Ñ­¶­±")] Text gameOverInfo_Txt;
-    [SerializeField] [Header("­«·s¶}©l«ö¶s")] Button restartBtn;
-    [SerializeField] [Header("Â÷¶}«ö¶s")] Button exitBtn;
+    [SerializeField] [Header("éŠæˆ²å¤±æ•—é é¢")] GameObject gameOverObj;
+    [SerializeField] [Header("éŠæˆ²å¤±æ•—é é¢")] Text gameOverInfo_Txt;
+    [SerializeField] [Header("é‡æ–°é–‹å§‹æŒ‰éˆ•")] Button restartBtn;
+    [SerializeField] [Header("é›¢é–‹æŒ‰éˆ•")] Button exitBtn;
 
-    [SerializeField] [Header("¤U¤@Ãö­¶­±")] GameObject nextLevelObj;
-    [SerializeField] [Header("¤U¤@Ãö¤å¦r")] Text nextInfoTxt;
-    [SerializeField] [Header("¤U¤@Ãö«ö¶s")] Button nextLevelBtn;
+    [SerializeField] [Header("ä¸‹ä¸€é—œé é¢")] GameObject nextLevelObj;
+    [SerializeField] [Header("ä¸‹ä¸€é—œæ–‡å­—")] Text nextInfoTxt;
+    [SerializeField] [Header("ä¸‹ä¸€é—œæŒ‰éˆ•")] Button nextLevelBtn;
 
-    [SerializeField] [Header("Ãö¥d¹D¨ã¼Æ¶q")] int iCount;
-    [SerializeField] [Header("Ãö¥d®É¶¡")] float fMaxTime;
+    [SerializeField] [Header("é—œå¡é“å…·æ•¸é‡")] int iCount;
+    [SerializeField] [Header("é—œå¡æ™‚é–“")] float fMaxTime;
     float fGameTime;
     float fdeltaTime;
 
@@ -107,7 +108,7 @@ public class GameManager : MonoBehaviour
 
         boPlayerDie = r_bEnable;
         gameOverObj.SetActive(boPlayerDie);
-        gameOverInfo_Txt.text = "§A¦º¤`¤F";
+        gameOverInfo_Txt.text = "ä½ æ­»äº¡äº†";
     }
 
     void Restart()
@@ -117,6 +118,10 @@ public class GameManager : MonoBehaviour
 
     public void Decrease()
     {
+#if UNITY_STANDALONE_WIN
+        Handheld.Vibrate();
+#endif
+
         iCount--;
 
         if (iCount <= 0)
@@ -128,7 +133,7 @@ public class GameManager : MonoBehaviour
         boPassLevel = r_bEnable;
         nextLevelObj.SetActive(boPassLevel);
 
-        nextInfoTxt.text = $"Ãö¥d {SceneManager.GetActiveScene().buildIndex - 1}/3 \r\n ³qÃö¦¨¥\!!";
+        nextInfoTxt.text = $"é—œå¡ {SceneManager.GetActiveScene().buildIndex - 1}/3 \r\n é€šé—œæˆåŠŸ!!";
     }
 
     void NextLevel()
@@ -144,7 +149,7 @@ public class GameManager : MonoBehaviour
     {
         boOverTime = r_bIsOver;
         gameOverObj.SetActive(boOverTime);
-        gameOverInfo_Txt.text = "¶W¹L®É¶¡";
+        gameOverInfo_Txt.text = "è¶…éæ™‚é–“";
     }
 
     void ToMenu()
