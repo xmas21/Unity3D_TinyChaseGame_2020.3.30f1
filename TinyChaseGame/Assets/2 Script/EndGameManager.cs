@@ -28,16 +28,11 @@ public class EndGameManager : MonoBehaviour
 
     void LinkToIg()
     {
-        Application.OpenURL("https://www.instagram.com/dejavu_ent_/");
+        //Application.OpenURL("https://www.instagram.com/dejavu_ent_/");
     }
 
     void ToMenu()
     {
         SceneManager.LoadScene(0);
-    }
-
-    void ShareFriend()
-    {
-
     }
 }
