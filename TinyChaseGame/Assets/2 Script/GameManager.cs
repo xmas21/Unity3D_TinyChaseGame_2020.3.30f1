@@ -118,10 +118,6 @@ public class GameManager : MonoBehaviour
 
     public void Decrease()
     {
-#if UNITY_STANDALONE_WIN
-        Handheld.Vibrate();
-#endif
-
         iCount--;
 
         if (iCount <= 0)
@@ -130,6 +126,8 @@ public class GameManager : MonoBehaviour
 
     public void SetNextLevelPage(bool r_bEnable)
     {
+        iCount = 0;
+
         boPassLevel = r_bEnable;
         nextLevelObj.SetActive(boPassLevel);
 

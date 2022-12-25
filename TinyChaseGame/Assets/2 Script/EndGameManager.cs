@@ -28,9 +28,7 @@ public class EndGameManager : MonoBehaviour
 
     void LinkToIg()
     {
-        //Application.OpenURL("https://www.instagram.com/dejavu_ent_/");
         GoWebSite.ToWebSite();
-        Debug.Log("To Dejavu IG");
     }
 
     void ToMenu()
