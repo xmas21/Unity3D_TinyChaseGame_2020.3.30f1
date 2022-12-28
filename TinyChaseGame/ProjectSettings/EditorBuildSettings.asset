@@ -8,19 +8,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/0 Scenes/0 Menu.unity
     guid: 8170d1878957ac1488f3b4ee95840875
-  - enabled: 1
+  - enabled: 0
     path: Assets/0 Scenes/1 Tutorial.unity
     guid: 73df563b7c19239449bb9442abbd715a
-  - enabled: 1
+  - enabled: 0
     path: Assets/0 Scenes/2 Game 01.unity
     guid: eacf0bbfb7b17a647ba9ba7db3fdcd38
-  - enabled: 1
+  - enabled: 0
     path: Assets/0 Scenes/3 Game 02.unity
     guid: 9da66a3fd0111c244b5aa9e8dbcb11d3
-  - enabled: 1
+  - enabled: 0
     path: Assets/0 Scenes/4 Game 03.unity
     guid: 191f7e489b49cd644a4ad0887fae6f99
-  - enabled: 1
+  - enabled: 0
     path: Assets/0 Scenes/5 End.unity
     guid: 8f22c0b3d6e888443a5b9d43ec0572fe
   m_configObjects: {}
