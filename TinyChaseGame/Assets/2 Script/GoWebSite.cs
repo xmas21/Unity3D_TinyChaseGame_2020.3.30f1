@@ -17,15 +17,8 @@ public class GoWebSite : MonoBehaviour
 #endif
     }
 
-    public void ToWeb2()
+    public void ToWeb4()
     {
-        Debug.LogError("2");
-        System.Diagnostics.Process.Start("https://www.instagram.com/dejavu_ent_/");
-    }
-
-    public void ToWeb3()
-    {
-        Debug.LogError("3");
-        Application.ExternalEval("https://www.instagram.com/dejavu_ent_/");
+        Nfynt.NPlugin.OpenURL("https://www.instagram.com/dejavu_ent_/");
     }
 }
