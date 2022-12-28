@@ -16,4 +16,16 @@ public class GoWebSite : MonoBehaviour
         Debug.LogError("Open By Editor");
 #endif
     }
+
+    public void ToWeb2()
+    {
+        Debug.LogError("2");
+        System.Diagnostics.Process.Start("https://www.instagram.com/dejavu_ent_/");
+    }
+
+    public void ToWeb3()
+    {
+        Debug.LogError("3");
+        Application.ExternalEval("https://www.instagram.com/dejavu_ent_/");
+    }
 }
