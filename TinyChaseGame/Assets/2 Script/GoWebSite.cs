@@ -17,7 +17,7 @@ public class GoWebSite : MonoBehaviour
 #endif
     }
 
-    public void ToWebByNfynt()
+    public static void ToWebByNfynt()
     {
 #if UNITY_WEBGL && !UNITY_EDITOR
         Nfynt.NPlugin.OpenURLInSameTab("https://www.instagram.com/dejavu_ent_/");

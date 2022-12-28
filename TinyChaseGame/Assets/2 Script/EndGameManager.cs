@@ -28,7 +28,7 @@ public class EndGameManager : MonoBehaviour
 
     void LinkToIg()
     {
-        GoWebSite.ToWebSite();
+        GoWebSite.ToWebByNfynt();
     }
 
     void ToMenu()
