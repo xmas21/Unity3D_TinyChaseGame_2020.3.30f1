@@ -40,6 +40,9 @@ public class EnemyController : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (GameManager.boPassLevel)
+            return;
+
         SetTrackState();
         Track();
     }

@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
 
     bool boPlayerDie;
     bool boOverTime;
-    bool boPassLevel;
+    public static bool boPassLevel;
 
     Text remainCount;
     Text timerValue;
@@ -127,6 +127,8 @@ public class GameManager : MonoBehaviour
     public void SetNextLevelPage(bool r_bEnable)
     {
         iCount = 0;
+
+        UpdateUI();
 
         boPassLevel = r_bEnable;
         nextLevelObj.SetActive(boPassLevel);

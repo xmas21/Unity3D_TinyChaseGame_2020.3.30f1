@@ -52,6 +52,11 @@ public class PlayerController : MonoBehaviour
 
         Vector3 v3Target = new Vector3(joystick.Horizontal, 0, joystick.Vertical);
 
+        if (joystick.Horizontal < 0)
+            transform.localScale = new Vector3(-1.5f, 1.5f, 1.5f);
+        else if (joystick.Horizontal > 0)
+            transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
+
         tf_this.position += v3Target * Time.deltaTime * f_moveSpeed;
     }
 
